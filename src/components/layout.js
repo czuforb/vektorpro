@@ -3,7 +3,6 @@
 import styled from "@emotion/styled"
 import React from "react"
 
-import emotionReset from 'emotion-reset';
 import { Global, css, jsx } from '@emotion/react';
 
 const Layout = ({ children }) => {
