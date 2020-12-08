@@ -20,7 +20,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "reset.css": "^2.0.2"
   },
   "devDependencies": {
     "prettier": "2.1.2"

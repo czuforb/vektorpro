@@ -10,10 +10,12 @@ const Layout = ({ children }) => {
 
   return (
     <>
+
       <Global styles={css`
       @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
-    ${emotionReset}
 
+      @import 'reset.css';
+      
     *, *::after, *::before {
       box-sizing: border-box;
       -moz-osx-font-smoothing: grayscale;
