@@ -1,53 +1,41 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
 
+/** @jsx jsx */
+import styled from "@emotion/styled"
 import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import emotionReset from 'emotion-reset';
+import { Global, css, jsx } from '@emotion/react';
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer style={{
-          marginTop: `2rem`
-        }}>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+      <Global styles={css`
+      @import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+    ${emotionReset}
+
+    *, *::after, *::before {
+      box-sizing: border-box;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-smoothing: antialiased; 
+    }
+
+    body{
+      font-family: 'Alata';
+    }
+ 
+  `} />
+
+
+      {children}
+
+
     </>
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+
+
 
 export default Layout
