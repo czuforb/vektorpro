@@ -61,7 +61,6 @@ const Layout = ({ children }) => {
       font-size:1.563rem;
     }
     p{
-      font-family:'Roboto';
       line-height:168%;
     }
 
@@ -72,8 +71,8 @@ const Layout = ({ children }) => {
       text-decoration: none;
     }
     li{
-      font-family:'Roboto';
       line-height:158%;
+      font-size:1.25rem;
     }
  
   `} />

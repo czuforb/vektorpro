@@ -15,6 +15,7 @@ const Hero = () => {
         gsap.set(ref.current, {
             overflow: 'hidden'
         })
+        /*
         const tl = gsap.timeline()
         gsap.to([ref.current.children[1].children[0], ref.current.children[2].children[0]], {
             duration: 1.75,
@@ -29,8 +30,8 @@ const Hero = () => {
             x: '0',
 
         })
+           */
 
-        /*
         gsap.fromTo([ref.current.children[1], ref.current.children[2]], {
             y: 400,
             opacity: 0,
@@ -40,14 +41,15 @@ const Hero = () => {
             stagger: 0.4,
             duration: 1
         })
-        */
         console.log(ref)
+        /*
         gsap.set([ref.current.children[1].children[0], ref.current.children[2].children[0]], {
             x: '-100%',
         })
         gsap.set([ref.current.children[1].children[1], ref.current.children[2].children[1]], {
             x: '-120%',
         })
+        */
     }, [])
 
 
