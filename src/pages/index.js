@@ -9,6 +9,7 @@ import Goals from "../components/Goals"
 import TargetGroup from "../components/TargetGroup"
 import Prices from "../components/Prices"
 import ContactFooter from "../components/ContactFooter"
+import Places from "../components/Places"
 
 const IndexPage = () => (
   <Layout>
@@ -18,6 +19,7 @@ const IndexPage = () => (
     <Goals />
     <TargetGroup />
     <Prices />
+    <Places />
     <ContactFooter />
   </Layout>
 )
