@@ -22,7 +22,7 @@ export default Feature
 
 
 const Text = styled.p`
-    grid-column: 3 / 12;
+    grid-column: 3 / 14;
     color:white;
     font-size:1.5rem;
     line-height: 180%;

@@ -67,7 +67,7 @@ export default Places
 
 const LocationContainer = styled.div`
     position:relative;
-    grid-column: 3/15;
+    grid-column: 3/14;
     background-color:lightgrey;
     display:flex;
     margin-bottom:4rem;

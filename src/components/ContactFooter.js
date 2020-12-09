@@ -28,7 +28,7 @@ export default ContactFooter
 
 
 const ContactContainer = styled.div`
-    grid-column: 3/15;
+    grid-column: 3/14;
     display:flex;
     width:100%;
     justify-content:space-around;
@@ -44,7 +44,7 @@ const ContactContainer = styled.div`
 `
 
 const Footer = styled.div`
-    grid-column: 2/16;
+    grid-column: 3/14;
     display:flex;
     width:100%;
     justify-content:flex-start;

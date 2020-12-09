@@ -46,7 +46,7 @@ const Hero = () => {
 const Left = styled.div`
     width:100%;
     height:100%;
-    grid-column: 2/ 9;
+    grid-column: 3/ 9;
     grid-row: 1/8;
 
     padding:1rem;

@@ -38,10 +38,10 @@ export default Prices
 
 
 const PriceContainer = styled.div`
-    grid-column: 3/15;
+    grid-column: 3/14;
     display:flex;
     width:100%;
-    justify-content:space-around;
+    justify-content:flex-start;
     color:white;
 `
 
@@ -54,6 +54,10 @@ const Package = styled.div`
     align-items:center;
     justify-content:center;
     flex-direction:column;
+    &:nth-child(2){
+    margin-left:2rem;
+    margin-right:2rem;   
+    }
     h3{
         font-size:1.75rem;
         width:80%;
@@ -74,7 +78,7 @@ const Package = styled.div`
 
 
 const Note = styled.p`
-    grid-column: 3/ 15;
+    grid-column: 2/ 15;
     place-self:center;
     color:white;
     opacity:0.5;
