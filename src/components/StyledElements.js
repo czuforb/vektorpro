@@ -23,14 +23,6 @@ export const SectionTitle = styled.div`
         color:${props => props.blue ? '#002253' : 'white'};
         display:flex;
         align-items: flex-end;
-        &:before{
-            content:" ";
-            width:2rem;
-            height:2px;
-            background-color:${props => props.blue ? '#002253' : 'white'};
-            margin-right:0.75rem;
-            margin-bottom:3px;
-        }
     }
 `
 

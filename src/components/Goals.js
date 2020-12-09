@@ -14,14 +14,14 @@ const Goals = () => {
 
     const goalHover = (index) => {
         gsap.to(ref.current.children[0].children[0], {
-            ease: 'power1',
+            ease: 'power1.inOut',
             duration: 0.5,
             y: 96 * index
         })
 
         gsap.to(ref.current.children[index + 1], {
             duration: 0.5,
-            ease: 'power2.in',
+            ease: 'power1.inOut',
             opacity: 1
         })
     }
@@ -30,10 +30,11 @@ const Goals = () => {
     const goalLeave = (index) => {
         gsap.to(ref.current.children[index + 1], {
             duration: 0.5,
-            ease: 'power2.out',
+            ease: 'power1.inOut',
             opacity: 0.5
         })
     }
+
 
 
 
@@ -75,7 +76,7 @@ const GoalsContainer = styled.div`
 `
 
 const AnimatedLine = styled.div`
-    width:1.75rem;
+    width:0.25rem;
     height:100%;
     background-color:rgba(0,34,83, 0.25);
     position:absolute;
@@ -101,7 +102,7 @@ const Goal = styled.div`
     width:100%;
     height:96px;
     color:#002253;
-    background-color:#97CBDC;
+    background-color:rgba(151,203,220, 0.5);
     h3{
         font-size:2rem;
     }

@@ -18,7 +18,7 @@ const Header = () => {
 export default Header
 
 const HeaderContainer = styled.header`
-    grid-column:2 / 12;
+    grid-column:3 / 14;
     padding:0.5rem;
     display:flex;
     align-items:center;

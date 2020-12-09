@@ -20,6 +20,9 @@ const Layout = ({ children }) => {
       -moz-osx-font-smoothing: grayscale;
       -webkit-font-smoothing: antialiased;
       font-smoothing: antialiased; 
+      margin:0;
+      padding:0;
+
     }
 
     body{
