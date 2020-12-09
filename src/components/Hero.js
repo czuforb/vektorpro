@@ -34,10 +34,8 @@ const Hero = () => {
 
         gsap.fromTo([ref.current.children[1], ref.current.children[2]], {
             y: 400,
-            opacity: 0,
         }, {
             y: 0,
-            opacity: 1,
             stagger: 0.4,
             duration: 1
         })
@@ -60,11 +58,9 @@ const Hero = () => {
                 <p>Adott sportági edzésmunkát kiegészítő, azokat erősítő, egyéni igényeknek megfelelő mozgáskoordináció-fejlesztő edzések. A modern sportéletben egyre inkább előtérbe kerülő, igen hatékony edzésforma.</p>
             </Left>
             <Image1 >
-                <div></div>
                 <img src={image1} alt="vektor pro image 12" />
             </Image1>
             <Image2>
-                <div></div>
                 <img src={image2} alt="vektor pro image 12" />
             </Image2>
             <BgImage>
@@ -126,7 +122,7 @@ const Image1 = styled.div`
         grid-column:13/19;
         grid-row:3/8;
       }
-    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     z-index:1;
     div{
         width:100%;
@@ -154,7 +150,7 @@ const Image2 = styled.div`
       }
     margin-top:-2rem;
     z-index:2;
-    //box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     div{
         width:100%;
         height:100%;
