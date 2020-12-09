@@ -10,63 +10,81 @@ import image2 from '../img/02.png'
 
 const Hero = () => {
     const ref = useRef()
+
     useEffect(() => {
-        gsap.fromTo(ref.current, {
+        gsap.set(ref.current, {
+            overflow: 'hidden'
+        })
+        const tl = gsap.timeline()
+        gsap.to([ref.current.children[1].children[0], ref.current.children[2].children[0]], {
+            duration: 1.75,
+            ease: 'power2.in',
+            x: '0',
+
+        })
+        gsap.to([ref.current.children[1].children[1], ref.current.children[2].children[1]], {
+            duration: 1.75,
+            delay: 0.1,
+            ease: 'power2.in',
+            x: '0',
+
+        })
+
+        /*
+        gsap.fromTo([ref.current.children[1], ref.current.children[2]], {
             y: 400,
+            opacity: 0,
         }, {
             y: 0,
+            opacity: 1,
             stagger: 0.4,
             duration: 1
         })
+        */
         console.log(ref)
+        gsap.set([ref.current.children[1].children[0], ref.current.children[2].children[0]], {
+            x: '-100%',
+        })
+        gsap.set([ref.current.children[1].children[1], ref.current.children[2].children[1]], {
+            x: '-120%',
+        })
     }, [])
+
+
     return (
         <Grid ref={ref} rows>
             <Left>
                 <h2>Személyre szabott sportolói készségfejlesztés</h2>
                 <p>Adott sportági edzésmunkát kiegészítő, azokat erősítő, egyéni igényeknek megfelelő mozgáskoordináció-fejlesztő edzések. A modern sportéletben egyre inkább előtérbe kerülő, igen hatékony edzésforma.</p>
-                <button>Érdekel
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                </button>
             </Left>
             <Image1 >
+                <div></div>
                 <img src={image1} alt="vektor pro image 12" />
             </Image1>
             <Image2>
+                <div></div>
                 <img src={image2} alt="vektor pro image 12" />
             </Image2>
             <BgImage>
-                <path d="M613.889 183.591C660.718 136.788 660.718 60.9051 613.889 14.1022C567.06 -32.7007 491.134 -32.7007 444.305 14.1022L0 458.157L15.3424 473.49L14.9892 473.843L459.294 917.898C506.123 964.701 582.049 964.701 628.878 917.898C675.707 871.095 675.707 795.212 628.878 748.41L338.815 458.51L613.889 183.591Z" fill="#97CBDC" />
-
+                <path d="M613.889 204.591C660.718 157.788 660.718 81.9051 613.889 35.1022C567.06 -11.7007 491.134 -11.7007 444.305 35.1022L0 479.157L15.3424 494.49L14.9892 494.843L459.294 938.898C506.123 985.701 582.049 985.701 628.878 938.898C675.707 892.095 675.707 816.212 628.878 769.41L338.815 479.51L613.889 204.591Z" />
             </BgImage>
         </Grid>
     )
 }
 
 const Left = styled.div`
-
     grid-column: 1/ 10;
     @media (min-width: 1080px) {
         grid-column: 2/ 13;
         grid-row:1/8;
       }
     padding:1rem;
-
     display:flex;
     align-items:flex-start;
     justify-content:center;
     flex-direction:column;
-
-
-
     z-index:3;
-
-
-
-    color: #002253;
-
-
-
+    color: var(--blue);
     h2{
         margin-bottom:1.5rem;
         width:100%;
@@ -97,6 +115,8 @@ const Left = styled.div`
  
 `
 const Image1 = styled.div`
+    position:relative;
+    overflow:hidden;
     width:100%;
     height:100%;
     grid-column:3/8;
@@ -104,15 +124,24 @@ const Image1 = styled.div`
         grid-column:13/19;
         grid-row:3/8;
       }
-      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-       z-index:1;
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    z-index:1;
+    div{
+        width:100%;
+        height:100%;
+        background-color:var(--green);
+        position:absolute;
+    }
     img{
         width:100%;
         height:100%;
         object-fit:cover;
+        position:absolute;
     }
 `
 const Image2 = styled.div`
+    position:relative;
+    overflow:hidden;
     width:100%;
     height:100%;
     grid-column: 5/10;
@@ -123,20 +152,28 @@ const Image2 = styled.div`
       }
     margin-top:-2rem;
     z-index:2;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    //box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    div{
+        width:100%;
+        height:100%;
+        background-color:var(--blue);
+        position:absolute;
+    }
     img{
+        position:absolute;
         width:100%;
         height:100%;
         object-fit:cover;
     }
 `
 const BgImage = styled.svg`
-display:hidden;
-position:absolute;
-width:100%;
-height:100%;
-z-index:0;
-left:25%;
+    display:hidden;
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:0;
+    left:25%;
+    fill: var(--purple);
 `
 
 

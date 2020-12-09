@@ -18,10 +18,10 @@ export const Grid = styled.section`
 
       }
     grid-template-rows: ${props => props.rows ? 'repeat(8,72px)' : 'auto'};
-    background-color: ${props => props.bg ? '#002253' : 'none'};
+    background-color: ${props => props.bg ? 'var(--blue)' : 'none'};
     padding:1rem;
   }
-`;
+`
 
 
 
@@ -34,7 +34,7 @@ export const SectionTitle = styled.div`
     margin-bottom:1.5rem;
     h3{
         font-size:1.953rem;
-        color:${props => props.blue ? '#002253' : 'white'};
+        color:${props => props.blue ? 'var(--blue)' : 'var(--blue-light)'};
         display:flex;
         align-items: flex-end;
     }

@@ -36,14 +36,17 @@ const ContactContainer = styled.div`
     width:100%;
     justify-content:space-around;
     align-items:center;
-    color:white;
     flex-direction: column;
     margin-top:2rem;
     margin-bottom:6rem;
     a{
-        color:white;
         margin-bottom:2rem;
         font-size:2rem;
+        color:var(--blue-light);
+
+        &:hover{
+            color:var(--green);
+        }
     }
 `
 
@@ -55,17 +58,18 @@ const Footer = styled.div`
     display:flex;
     width:100%;
     justify-content:flex-start;
-    color:white;
-    border-top:1px solid white;
+    color:var(--blue-light);
+    border-top:1px solid var(--blue-light);
     margin-bottom:4rem;
     padding-top:1rem;
     a{
         margin-left:auto;
-        color:white;
-        font-size:0.75rem;
+        color:var(--blue-light);
+        font-size:1rem;
     }
 
     h3{
-        font-size:0.75rem;
+        font-size:1rem;
+        letter-spacing:1px;
     }
 `

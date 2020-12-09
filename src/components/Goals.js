@@ -92,7 +92,7 @@ const GoalsContainer = styled.div`
 const AnimatedLine = styled.div`
     width:0.25rem;
     height:100%;
-    background-color:rgba(0,34,83, 0.25);
+    background-color:var(--grey);
     position:absolute;
     left:0;
     z-index:2;
@@ -105,34 +105,37 @@ const AnimatedLine = styled.div`
         height:96px;
         position:absolute;
         top:0;
-        background-color:#002253;
+        background-color:var(--blue);
         z-index:3;
     }
 `
 
 const Goal = styled.div`
     display:flex;
-    @media (min-width: 1080px) {
-        flex-direction:row;
-      }
     flex-direction:column;
     justify-content:space-between;
     align-items:start;
-    padding:2rem;
+    @media (min-width: 1080px) {
+        flex-direction:row;
+      }
     width:100%;
-    height:auto;
+    height:96px;
     color:#002253;
-    background-color:rgba(151,203,220, 0.5);
-    h4{
-        margin-bottom:1rem;
-    }
+    padding:1.5rem;
+    background-color:var(--purple);
     div{
+        height:100%;
+        width:100%;
+        display:flex;
+        justify-content:flex-start;
+    }
+    h4{
+        width:40%;
         height:100%;
     }
     p{
         width:100%;
     }
-
 `
 
 

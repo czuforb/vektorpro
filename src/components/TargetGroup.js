@@ -34,9 +34,9 @@ const List = styled.ul`
     height:auto;
     list-style-type:none;
     margin-bottom:2rem;
-
-    li{
-        margin-bottom:1rem;
-
+        li{
+            margin-bottom:1rem;
+            color:var(--blue);
+        }
     }
 `

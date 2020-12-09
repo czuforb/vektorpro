@@ -50,7 +50,7 @@ const PriceContainer = styled.div`
     width:100%;
     justify-content:center;
     align-items:center;
-    color:white;
+    color:var(--blue-light);
 `
 
 const Package = styled.div`
@@ -88,16 +88,13 @@ const Package = styled.div`
 
 `
 
-
-
 const Note = styled.p`
     grid-column: 1/12;
     @media (min-width: 1080px) {
         grid-column:2/26;
       }
     place-self:center;
-    color:white;
-    opacity:0.5;
+    color:var(--grey);
     margin-top:1rem;
     margin-bottom:4rem;
     `

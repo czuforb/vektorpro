@@ -8,7 +8,7 @@ import gsap from "gsap/gsap-core"
 
 import nagykovacsi from "../img/nagykovacsi.webp"
 import osteo from "../img/nagykovacsi.webp"
-import call from "../img/call.webp"
+import call from "../img/screen-0.jpg"
 
 const Places = () => {
 
@@ -18,22 +18,22 @@ const Places = () => {
     const goalHover = (index) => {
         gsap.to(ref.current.children[0].children[0], {
             ease: 'power2.inOut',
-            duration: 0.75,
-            x: -500 * index
+            duration: 0.5,
+            x: -100 * index + '%'
         })
         gsap.to(ref.current.children[1].children[index], {
-            ease: 'power2.inOut',
-            duration: 0.75,
-            backgroundColor: 'transparent'
+            duration: 0.5,
+            ease: 'power1.inOut',
+            opacity: 1
         })
     }
 
 
     const goalLeave = (index) => {
         gsap.to(ref.current.children[1].children[index], {
-            ease: 'power2.inOut',
-            duration: 0.75,
-            backgroundColor: 'grey'
+            duration: 0.5,
+            ease: 'power1.inOut',
+            opacity: 0.5
         })
     }
 
@@ -45,17 +45,17 @@ const Places = () => {
                 <h3>Edzéseink helyszínei</h3>
             </SectionTitle>
             <LocationContainer ref={ref}>
-                <Map>
+                <ImageContainer>
                     <PlaceImage>
                         <img src={osteo} alt="PhysiOsteo" />
                         <img src={nagykovacsi} alt="Nagykovacsi" />
                         <img src={call} alt="PhysiOsteo" />
                     </PlaceImage>
-                </Map>
+                </ImageContainer>
                 <Locations>
-                    <Location onTouchEnd={() => goalHover(0)} onMouseEnter={() => goalHover(0)} onMouseLeave={() => goalLeave(0)}>PhysiOsteo <span>Hajnóczy József u. 22</span> <span>1122, Budapest</span></Location>
-                    <Location onTouchEnd={() => goalHover(1)} onMouseEnter={() => goalHover(1)} onMouseLeave={() => goalLeave(1)}>GreenPower Gym <span>Teleki-Tisza Kastély</span> <span>2094, Nagykovácsi</span></Location>
-                    <Location onTouchEnd={() => goalHover(2)} onMouseEnter={() => goalHover(2)} onMouseLeave={() => goalLeave(2)}>Egyéni egyeztetés alapján</Location>
+                    <Location onTouchEnd={() => goalHover(0)} onMouseEnter={() => goalHover(0)} onMouseLeave={() => goalLeave(0)}><h4>PhysiOsteo</h4> <span>Hajnóczy József u. 22</span> <span>1122, Budapest</span></Location>
+                    <Location onTouchEnd={() => goalHover(1)} onMouseEnter={() => goalHover(1)} onMouseLeave={() => goalLeave(1)}><h4>GreenPower Gym</h4> <span>Teleki-Tisza Kastély</span> <span>2094, Nagykovácsi</span></Location>
+                    <Location onTouchEnd={() => goalHover(2)} onMouseEnter={() => goalHover(2)} onMouseLeave={() => goalLeave(2)}><h4>Egyéni egyeztetés alapján</h4></Location>
                 </Locations>
             </LocationContainer>
         </Grid>
@@ -71,7 +71,6 @@ const LocationContainer = styled.div`
     @media (min-width: 1080px) {
         grid-column:2/26;
       }
-    background-color:lightgrey;
     display:flex;
     flex-direction:column;
     @media (min-width: 800px) {
@@ -81,7 +80,7 @@ const LocationContainer = styled.div`
     place-self:center;
 `
 
-const Map = styled.div`
+const ImageContainer = styled.div`
     width:100%;
     height: 384px;
     overflow:hidden;
@@ -91,6 +90,7 @@ const PlaceImage = styled.div`
     height:100%;
     display:flex;
     flex-wrap:no-wrap;
+
     img{
         width:100%;
         height:100%;
@@ -109,11 +109,13 @@ const Location = styled.li`
     flex-direction:column;
     justify-content:center;
     align-items:start;
-    padding:1rem;
+    padding:2rem;
     font-size:1.5rem;
+    background-color:var(--purple);
     span{
         font-size:1rem;
-        margin-bottom:0.2rem;
+        font-family:'Roboto';
+        margin-bottom:-0.5rem;
     }
 `
 
