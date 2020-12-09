@@ -24,7 +24,7 @@ const Places = () => {
         gsap.to(ref.current.children[1].children[index], {
             ease: 'power2.inOut',
             duration: 0.75,
-            backgroundColor: 'red'
+            backgroundColor: 'transparent'
         })
     }
 
@@ -68,28 +68,12 @@ export default Places
 const LocationContainer = styled.div`
     position:relative;
     grid-column: 3/15;
-    background-color:grey;
+    background-color:lightgrey;
     display:flex;
     margin-bottom:4rem;
     place-self:center;
 `
-const AnimatedLine = styled.div`
-    width:0.25rem;
-    height:100%;
-    background-color:rgba(0,34,83, 0.25);
-    position:absolute;
-    right:0;
-    z-index:2;
-    span{
-        display:block;
-        width:100%;
-        height:96px;
-        position:absolute;
-        top:0;
-        background-color:#002253;
-        z-index:3;
-    }
-`
+
 const Map = styled.div`
     width:500px;
     height: 384px;
@@ -118,7 +102,12 @@ const Location = styled.li`
     flex-direction:column;
     justify-content:center;
     align-items:start;
-    padding:2rem;
+    padding:1rem;
+    font-size:1.5rem;
+    span{
+        font-size:1rem;
+        margin-bottom:0.2rem;
+    }
 `
 
 
