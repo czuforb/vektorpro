@@ -9,7 +9,7 @@ const Prices = () => {
     return (
         <Grid bg>
             <SectionTitle>
-                <h2>Áraink</h2>
+                <h3>Áraink</h3>
             </SectionTitle>
             <PriceContainer>
                 <Package>
@@ -38,22 +38,35 @@ export default Prices
 
 
 const PriceContainer = styled.div`
-    grid-column: 3/14;
+    grid-column: 1 / 11;
+    @media (min-width: 1080px) {
+        grid-column:2/26;
+      }
     display:flex;
+    @media (min-width: 800px) {
+        flex-direction:row;
+      }
+    flex-direction:column;
     width:100%;
-    justify-content:flex-start;
+    justify-content:center;
+    align-items:center;
     color:white;
 `
 
 const Package = styled.div`
     border:1px white solid;
-    width:352px;
+
+    width:100%;
     height:320px;
     padding:2rem;
     display:flex;
     align-items:center;
     justify-content:center;
     flex-direction:column;
+    &:nth-child(2){
+    margin-top:2rem;
+    margin-bottom:2rem;   
+    }
     &:nth-child(2){
     margin-left:2rem;
     margin-right:2rem;   
@@ -78,9 +91,13 @@ const Package = styled.div`
 
 
 const Note = styled.p`
-    grid-column: 2/ 15;
+    grid-column: 1/12;
+    @media (min-width: 1080px) {
+        grid-column:2/26;
+      }
     place-self:center;
     color:white;
     opacity:0.5;
+    margin-top:1rem;
     margin-bottom:4rem;
     `

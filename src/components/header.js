@@ -18,7 +18,10 @@ const Header = () => {
 export default Header
 
 const HeaderContainer = styled.header`
-    grid-column:3 / 14;
+    grid-column:2/ 10;
+    @media (min-width: 1080px) {
+        grid-column:2/26;
+      }
     padding:0.5rem;
     display:flex;
     align-items:center;

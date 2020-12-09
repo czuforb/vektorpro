@@ -9,7 +9,7 @@ const TargetGroup = () => {
     return (
         <Grid>
             <SectionTitle blue>
-                <h2>Célcsoport</h2>
+                <h3>Célcsoport</h3>
             </SectionTitle>
             <List>
                 <li>Sportoló gyermekek és felnőttek akik szeretnék szélesíteni mozgásbeli képességeiket.</li>
@@ -26,14 +26,17 @@ export default TargetGroup
 
 
 const List = styled.ul`
-    grid-column: 3/ 14;
+    grid-column: 1/ 10;
+    @media (min-width: 1080px) {
+        grid-column:2/26;
+      }
     width:100%;
     height:auto;
     list-style-type:none;
-    margin-bottom:4rem;
+    margin-bottom:2rem;
 
     li{
-        margin-bottom:1.5rem;
-        font-size:1.5rem;
+        margin-bottom:1rem;
+
     }
 `

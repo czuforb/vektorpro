@@ -41,27 +41,38 @@ const Goals = () => {
     return (
         <Grid>
             <SectionTitle blue>
-                <h2>Az edzések fő céljai</h2>
+                <h3>Az edzések fő céljai</h3>
             </SectionTitle>
             <GoalsContainer ref={ref}>
                 <AnimatedLine>
                     <span></span>
                 </AnimatedLine>
                 <Goal onMouseEnter={() => goalHover(0)} onMouseLeave={() => goalLeave(0)}>
-                    <h3>Hatékonyság</h3>
-                    <p>A kreatív koordinációs szint bővítése, sportolói teljesítőképesség növelése</p>
+                    <h4>Hatékonyság</h4>
+                    <div>
+                        <p>A kreatív koordinációs szint bővítése, sportolói teljesítőképesség növelése</p>
+                    </div>
                 </Goal>
                 <Goal onMouseEnter={() => goalHover(1)} onMouseLeave={() => goalLeave(1)}>
-                    <h3>Tudatosság</h3>
-                    <p>Sportágspecifikus mozgásminták tanulása és erősítése</p>
+                    <h4>Tudatosság</h4>
+                    <div>
+
+                        <p>Sportágspecifikus mozgásminták tanulása és erősítése</p>
+                    </div>
                 </Goal>
                 <Goal onMouseEnter={() => goalHover(2)} onMouseLeave={() => goalLeave(2)}>
-                    <h3>Változatosság</h3>
-                    <p>Rendkívül sokrétű, összetett feladatokból álló edzések, a belső motiváció kialakítása, örömteli tanulás és munka</p>
+                    <h4>Változatosság</h4>
+                    <div>
+                        <p>Rendkívül sokrétű, összetett feladatokból álló edzések, a belső motiváció kialakítása, örömteli tanulás és munka</p>
+
+                    </div>
                 </Goal>
                 <Goal onMouseEnter={() => goalHover(3)} onMouseLeave={() => goalLeave(3)}>
-                    <h3>Fenntarthatóság</h3>
-                    <p>A mozgásbeli hiányosságok, problémák felismerése és fejlesztése</p>
+                    <h4>Fenntarthatóság</h4>
+                    <div>
+
+                        <p>A mozgásbeli hiányosságok, problémák felismerése és fejlesztése</p>
+                    </div>
                 </Goal>
             </GoalsContainer >
         </Grid >
@@ -69,8 +80,11 @@ const Goals = () => {
 }
 
 const GoalsContainer = styled.div`
-    grid-column: 3 / 14;
-    height:384px;
+    grid-column: 1/10;
+    @media (min-width: 1080px) {
+        grid-column:2/26;
+      }
+    height:auoo;
     position:relative;
     margin-bottom:4rem;
 `
@@ -83,7 +97,10 @@ const AnimatedLine = styled.div`
     left:0;
     z-index:2;
     span{
+        display:none;
+        @media (min-width: 1080px) {
         display:block;
+      }
         width:100%;
         height:96px;
         position:absolute;
@@ -95,22 +112,25 @@ const AnimatedLine = styled.div`
 
 const Goal = styled.div`
     display:flex;
+    @media (min-width: 1080px) {
+        flex-direction:row;
+      }
+    flex-direction:column;
     justify-content:space-between;
-    align-items:center;
+    align-items:start;
     padding:2rem;
-    padding-left:6rem;
     width:100%;
-    height:96px;
+    height:auto;
     color:#002253;
     background-color:rgba(151,203,220, 0.5);
-    h3{
-        font-size:2rem;
+    h4{
+        margin-bottom:1rem;
     }
-
+    div{
+        height:100%;
+    }
     p{
-        font-size:1.25rem;
-        line-height:150%;
-        width:70%;
+        width:100%;
     }
 
 `

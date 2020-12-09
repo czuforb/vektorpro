@@ -42,7 +42,7 @@ const Places = () => {
     return (
         <Grid>
             <SectionTitle blue>
-                <h2>Edzéseink helyszínei</h2>
+                <h3>Edzéseink helyszínei</h3>
             </SectionTitle>
             <LocationContainer ref={ref}>
                 <Map>
@@ -53,9 +53,9 @@ const Places = () => {
                     </PlaceImage>
                 </Map>
                 <Locations>
-                    <Location onMouseEnter={() => goalHover(0)} onMouseLeave={() => goalLeave(0)}>PhysiOsteo <span>Hajnóczy József u. 22</span> <span>1122, Budapest</span></Location>
-                    <Location onMouseEnter={() => goalHover(1)} onMouseLeave={() => goalLeave(1)}>GreenPower Gym <span>Teleki-Tisza Kastély</span> <span>2094, Nagykovácsi</span></Location>
-                    <Location onMouseEnter={() => goalHover(2)} onMouseLeave={() => goalLeave(2)}>Egyéni egyeztetés alapján</Location>
+                    <Location onTouchEnd={() => goalHover(0)} onMouseEnter={() => goalHover(0)} onMouseLeave={() => goalLeave(0)}>PhysiOsteo <span>Hajnóczy József u. 22</span> <span>1122, Budapest</span></Location>
+                    <Location onTouchEnd={() => goalHover(1)} onMouseEnter={() => goalHover(1)} onMouseLeave={() => goalLeave(1)}>GreenPower Gym <span>Teleki-Tisza Kastély</span> <span>2094, Nagykovácsi</span></Location>
+                    <Location onTouchEnd={() => goalHover(2)} onMouseEnter={() => goalHover(2)} onMouseLeave={() => goalLeave(2)}>Egyéni egyeztetés alapján</Location>
                 </Locations>
             </LocationContainer>
         </Grid>
@@ -67,15 +67,22 @@ export default Places
 
 const LocationContainer = styled.div`
     position:relative;
-    grid-column: 3/14;
+    grid-column: 1/11;
+    @media (min-width: 1080px) {
+        grid-column:2/26;
+      }
     background-color:lightgrey;
     display:flex;
+    flex-direction:column;
+    @media (min-width: 800px) {
+        flex-direction:row;
+      }
     margin-bottom:4rem;
     place-self:center;
 `
 
 const Map = styled.div`
-    width:500px;
+    width:100%;
     height: 384px;
     overflow:hidden;
 `
@@ -92,7 +99,7 @@ const PlaceImage = styled.div`
 `
 
 const Locations = styled.ul`
-    width:500px;
+    width:100%;
     list-style-type: none;
     
 `

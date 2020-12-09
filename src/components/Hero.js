@@ -21,7 +21,7 @@ const Hero = () => {
         console.log(ref)
     }, [])
     return (
-        <Grid ref={ref}>
+        <Grid ref={ref} rows>
             <Left>
                 <h2>Személyre szabott sportolói készségfejlesztés</h2>
                 <p>Adott sportági edzésmunkát kiegészítő, azokat erősítő, egyéni igényeknek megfelelő mozgáskoordináció-fejlesztő edzések. A modern sportéletben egyre inkább előtérbe kerülő, igen hatékony edzésforma.</p>
@@ -44,11 +44,12 @@ const Hero = () => {
 }
 
 const Left = styled.div`
-    width:100%;
-    height:100%;
-    grid-column: 3/ 9;
-    grid-row: 1/8;
 
+    grid-column: 1/ 10;
+    @media (min-width: 1080px) {
+        grid-column: 2/ 13;
+        grid-row:1/8;
+      }
     padding:1rem;
 
     display:flex;
@@ -56,21 +57,26 @@ const Left = styled.div`
     justify-content:center;
     flex-direction:column;
 
-    z-index:2;
+
+
+    z-index:3;
+
+
 
     color: #002253;
 
 
+
     h2{
-        font-size:3rem;
         margin-bottom:1.5rem;
+        width:100%;
         line-height:118%;
     }
     p{
         font-size:1rem;
         line-height:162%;
         margin-bottom:2rem;
-        width:530px;
+        width:100%;
     }
 
     button{
@@ -80,6 +86,7 @@ const Left = styled.div`
         font-size:1rem;
         display:flex;
         align-items:center;
+        margin-bottom:2rem;
         svg{
             width:1.5rem;
             height:auto;
@@ -92,11 +99,13 @@ const Left = styled.div`
 const Image1 = styled.div`
     width:100%;
     height:100%;
-    grid-column:9 / 12;
-    grid-row:4/8;
-    background-color: lightblue;
-
-    z-index:2;
+    grid-column:3/8;
+    @media (min-width: 1080px) {
+        grid-column:13/19;
+        grid-row:3/8;
+      }
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+       z-index:1;
     img{
         width:100%;
         height:100%;
@@ -106,10 +115,15 @@ const Image1 = styled.div`
 const Image2 = styled.div`
     width:100%;
     height:100%;
-    grid-column: 11 / 15;
-    grid-row: 2/7;
-    background-color: lightcoral;
+    grid-column: 5/10;
+    @media (min-width: 1080px) {
+        grid-column:18/26;
+        grid-row:2/8;
+
+      }
+    margin-top:-2rem;
     z-index:2;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     img{
         width:100%;
         height:100%;
@@ -117,6 +131,7 @@ const Image2 = styled.div`
     }
 `
 const BgImage = styled.svg`
+display:hidden;
 position:absolute;
 width:100%;
 height:100%;

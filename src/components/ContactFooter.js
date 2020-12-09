@@ -9,7 +9,7 @@ const ContactFooter = () => {
     return (
         <Grid bg>
             <SectionTitle>
-                <h2>Elérhetőség</h2>
+                <h3>Elérhetőség</h3>
             </SectionTitle>
             <ContactContainer>
                 <a href="mailto:skills@bvektorsport.hu">skills@vektorsport.hu</a>
@@ -28,33 +28,44 @@ export default ContactFooter
 
 
 const ContactContainer = styled.div`
-    grid-column: 3/14;
+    grid-column: 1/11;
+    @media (min-width: 1080px) {
+        grid-column:2/26;
+      }
     display:flex;
     width:100%;
     justify-content:space-around;
     align-items:center;
     color:white;
     flex-direction: column;
-
+    margin-top:2rem;
+    margin-bottom:6rem;
     a{
         color:white;
-        margin-bottom:4rem;
-        font-size:4rem;
+        margin-bottom:2rem;
+        font-size:2rem;
     }
 `
 
 const Footer = styled.div`
-    grid-column: 3/14;
+    grid-column: 1/11;
+    @media (min-width: 1080px) {
+        grid-column:2/26;
+      }
     display:flex;
     width:100%;
     justify-content:flex-start;
     color:white;
     border-top:1px solid white;
-    margin-bottom:6rem;
-    padding-top:2rem;
+    margin-bottom:4rem;
+    padding-top:1rem;
     a{
         margin-left:auto;
         color:white;
-        
+        font-size:0.75rem;
+    }
+
+    h3{
+        font-size:0.75rem;
     }
 `

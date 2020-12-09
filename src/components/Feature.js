@@ -9,7 +9,7 @@ const Feature = () => {
     return (
         <Grid bg>
             <SectionTitle>
-                <h2>Mi az a Vektor Pro?</h2>
+                <h3>Mi az a Vektor Pro?</h3>
             </SectionTitle>
             <Text>Adott sportági edzésmunkát kiegészítő, azokat erősítő, egyéni igényeknek megfelelő mozgáskoordináció-fejlesztő edzések. A modern sportéletben egyre inkább előtérbe kerülő, igen hatékony edzésforma.</Text>
         </Grid>
@@ -22,10 +22,13 @@ export default Feature
 
 
 const Text = styled.p`
-    grid-column: 3 / 14;
+    grid-column: 1 / 10;
+    @media (min-width: 1080px) {
+        grid-column:2/26;
+      }
     color:white;
-    font-size:1.5rem;
+    font-size:1rem;
     line-height: 180%;
-    margin-top:-2rem;
-    margin-bottom:4rem;
+    margin-top:1rem;
+    margin-bottom:2em;
 `
