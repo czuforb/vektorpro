@@ -8,7 +8,7 @@ import { Grid } from "./StyledElements.js"
 import image1 from "../img/01.png"
 import image2 from "../img/02.png"
 
-const Hero = () => {
+const Hero2 = () => {
   const ref = useRef()
 
   useEffect(() => {
@@ -56,16 +56,17 @@ const Hero = () => {
 
   return (
     <Grid ref={ref} rows>
-      <Left>
+      <Container>
         <h2>Személyre szabott sportolói készségfejlesztés</h2>
         <p>A 21. századi edzésmunka elengedhetetlen összetevője.</p>
-      </Left>
+      </Container>
       <Image1>
         <img src={image1} alt="vektor pro image 12" />
       </Image1>
       <Image2>
         <img src={image2} alt="vektor pro image 12" />
       </Image2>
+
       <BgImage>
         <path d="M613.889 204.591C660.718 157.788 660.718 81.9051 613.889 35.1022C567.06 -11.7007 491.134 -11.7007 444.305 35.1022L0 479.157L15.3424 494.49L14.9892 494.843L459.294 938.898C506.123 985.701 582.049 985.701 628.878 938.898C675.707 892.095 675.707 816.212 628.878 769.41L338.815 479.51L613.889 204.591Z" />
       </BgImage>
@@ -73,13 +74,14 @@ const Hero = () => {
   )
 }
 
-const Left = styled.div`
+const Container = styled.div`
   grid-column: 1/ 10;
+  grid-row: 2 / span 2;
   @media (min-width: 1080px) {
     grid-column: 2/ 13;
     grid-row: 1/8;
   }
-  padding: 1rem;
+  //padding: 1rem;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -90,6 +92,10 @@ const Left = styled.div`
     margin-bottom: 1.5rem;
     width: 100%;
     line-height: 118%;
+    font-size: 2rem;
+    @media (min-width: 1080px) {
+      font-size: 3rem;
+    }
   }
   p {
     font-size: 1rem;
@@ -120,11 +126,12 @@ const Image1 = styled.div`
   width: 100%;
   height: 100%;
   grid-column: 3/8;
-  //display: none;
+  display: none;
   @media (min-width: 1080px) {
-    grid-column: 13/19;
-    grid-row: 3/8;
-    display: none;
+    grid-column: 13/18;
+    grid-row: 1/8;
+    //display: none;
+    display: block;
   }
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   z-index: 1;
@@ -147,10 +154,13 @@ const Image2 = styled.div`
   width: 100%;
   height: 100%;
   grid-column: 5/10;
-  //display: none;
+  display: none;
+  grid-row: 5 / span 4;
   @media (min-width: 1080px) {
-    grid-column: 18/26;
+    grid-column: 17/22;
+    margin-bottom: 0;
     grid-row: 2/8;
+    display: block;
   }
   margin-top: -2rem;
   z-index: 2;
@@ -171,11 +181,13 @@ const Image2 = styled.div`
 const BgImage = styled.svg`
   display: hidden;
   position: absolute;
-  width: 100%;
   height: 100%;
+  width: 100%;
   z-index: 0;
-  left: 25%;
   fill: var(--purple);
+  @media (min-width: 1080px) {
+    left: 25%;
+  }
 `
 
-export default Hero
+export default Hero2
