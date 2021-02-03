@@ -17,9 +17,11 @@ export const Grid = styled.section`
         grid-template-columns: 1fr repeat(12, 16px 64px) 1fr;
 
       }
-    grid-template-rows: ${props => (props.rows ? "repeat(6,52px)" : "auto")};
+    grid-template-rows: ${props => (props.rows ? "repeat(6,72px)" : "auto")};
     background-color: ${props => (props.bg ? "var(--blue)" : "none")};
     padding:1rem;
+    padding-bottom: ${props => (props.pad ? "4rem" : "none")};
+
   }
 `
 

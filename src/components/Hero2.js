@@ -55,7 +55,7 @@ const Hero2 = () => {
   }, [])
 
   return (
-    <Grid ref={ref} rows>
+    <Grid ref={ref} rows pad>
       <Container>
         <h2>Személyre szabott sportolói készségfejlesztés</h2>
         <p>A 21. századi edzésmunka elengedhetetlen összetevője.</p>
